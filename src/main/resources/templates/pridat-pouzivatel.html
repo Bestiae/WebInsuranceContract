@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pridat pouzivatela</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+<body>
+<h1>Pridat noveho pouzivatela</h1>
+<form action="#" th:action="@{/pouzivatela/add}" th:object="${pouzivatel}" method="post">
+    <h2>User info</h2>
+    <div>
+        <input type="text" id="firstname" th:field="*{firstName}" /></p>
+        <label for="firstname">Meno</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="lastname" th:field="*{lastName}" /></p>
+        <label for="lastname">Priezvisko</label>
+    </div>
+    <br>
+    <div>
+        <input type="number" id="idnumber" th:field="*{idNumber}" /></p>
+        <label for="idnumber">Id cislo</label>
+    </div>
+    <br>
+    <div>
+        <input type="email" id="email" th:field="*{email}" /></p>
+        <label for="email">email</label>
+    </div>
+    <br>
+    <h2>Adresa trvaleho pobytu</h2>
+    <div>
+        <input type="number" id="psc" th:field="*{permAddress.PSC}" /></p>
+        <label for="psc">PSC</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="city" th:field="*{permAddress.city}" /></p>
+        <label for="city">Nazov obce</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="township" th:field="*{permAddress.township}" /></p>
+        <label for="township">Mesto</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="street" th:field="*{permAddress.street}" /></p>
+        <label for="street">Nazov ulice</label>
+    </div>
+    <br>
+    <div>
+        <input type="number" id="housenum" th:field="*{permAddress.houseNumber}" /></p>
+        <label for="housenum">Cislo domu</label>
+    </div>
+    <br>
+    <h2>Korespondencna adresa</h2>
+    <div>
+        <input type="number" id="psc_c" th:field="*{corrAddress.PSC}" /></p>
+        <label for="psc_c">PSC</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="city_c" th:field="*{corrAddress.city}" /></p>
+        <label for="city_c">Nazov obce</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="township_c" th:field="*{corrAddress.township}" /></p>
+        <label for="township_c">Mesto</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="street_c" th:field="*{corrAddress.street}" /></p>
+        <label for="street_c">Nazov ulice</label>
+    </div>
+    <br>
+    <div>
+        <input type="number" id="housenum_C" th:field="*{corrAddress.houseNumber}" /></p>
+        <label for="housenum_c">Cislo domu</label>
+    </div>
+    <br>
+    <input type="submit" value="Submit" style="width: fit-content;"/>
+</form>
+</body>
+</html>

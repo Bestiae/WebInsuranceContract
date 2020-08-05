@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pridat zmluvy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+        }
+        .mdc-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .mdc-drawer__header {
+            padding: 10px;
+        }
+        .mdc-list-item {
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            text-decoration: none;
+        }
+        .mdc-list-item__text {
+            padding-left: 10px;
+        }
+        .mdc-drawer {
+            border-right-color: rgba(0,0,0,.12);
+            border-right-style: solid;
+            width: 10%;
+        }
+        .infoUser{
+            margin-left: 7%;
+        }
+    </style>
+</head>
+<body>
+<aside class="mdc-drawer">
+    <div class="mdc-drawer__header">
+        <h3 class="mdc-drawer__title">Zadanie 3</h3>
+        <h6 class="mdc-drawer__subtitle">Java + Spring Boot</h6>
+    </div>
+<!--    <div class="mdc-drawer__content">-->
+<!--        <nav class="mdc-list">-->
+<!--            <a class="mdc-list-item" th:href="pouzivatela">-->
+<!--                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">send</i>-->
+<!--                <span class="mdc-list-item__text">Zoznam pouzivatelov</span>-->
+<!--            </a>-->
+<!--        </nav>-->
+<!--    </div>-->
+</aside>
+<div class="infoUser">
+    <h1>Vyberte typ zmluvy</h1>
+    <a th:href="@{'/pouzivatela/pouzivatel/' + ${id} + '/pridat-poistenieDomacnosti'}" th:text="${'Poistenie Domacnosti'}"></a>
+    <br>
+    <a th:href="@{'/pouzivatela/pouzivatel/' + ${id} + '/pridat-poistenieDomuBytu'}" th:text="${'Poistenie Domu a Bytu'}"></a>
+    <br>
+    <a th:href="@{'/pouzivatela/pouzivatel/' + ${id} + '/pridat-urazovePoistenie'}" th:text="${'Urazove poistenie'}"></a>
+    <br>
+    <a th:href="@{'/pouzivatela/pouzivatel/' + ${id} + '/pridat-cestovnePoistenie'}" th:text="${'Cestovne poistenie'}"></a>
+</div>
+
+</body>
+</html>

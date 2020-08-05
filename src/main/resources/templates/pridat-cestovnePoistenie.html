@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pridat Poistenie</title>
+</head>
+<body>
+<form action="#" th:action="@{'/pouzivatela/pouzivatel/pridat-cestovnePoistenie/' + ${id}}" th:object="${zmluva}" method="post">
+    <h2>Zmluva info</h2>
+    <div>
+        <label for="signDate">Data registracii</label>
+        <input type="date" id="signDate" th:field="*{signDate.date}" /></p>
+
+    </div>
+    <div>
+        <label for="beginDate">Data zacatku</label>
+        <input type="date" id="beginDate" th:field="*{startDate.date}" /></p>
+
+    </div>
+    <div>
+        <label for="endDate">Data konca</label>
+        <input type="date" id="endDate" th:field="*{endDate.date}" /></p>
+
+    </div>
+    <div>
+        <label for="monthP">Mesiacna platba</label>
+        <input type="number" step="0.01" id="monthP" th:field="*{monthPayment}" /></p>
+
+    </div>
+    <div>
+        <label for="compensation">Konpensacia</label>
+        <input type="number" step="0.01" id="compensation" th:field="*{compensation}" /></p>
+    </div>
+    <div>
+        <label for="insured">Poisteny: </label>
+        <select id = "insured" th:field="*{insuredId}">
+            <option th:each="pouzivatel : ${pouzivatela}" th:value="${pouzivatel.getId()}" th:text="${pouzivatel.getFullName()}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="terr">Uzemie</label>
+        <select id="terr"th:field="*{coverage}">
+            <option th:each="t : ${T(sk.stuba.fei.uim.oop.spring.mvcapp.zadanie3.zmluvy.CestovnePoistenie.territory).values()}" th:value="${t}" th:text="${t.displayValue}"></option>
+        </select>
+    </div>
+    <div>
+        <label for="purr">Ucel cesty</label>
+        <select id="purr"th:field="*{insurancePurpose}">
+            <option th:each="t : ${T(sk.stuba.fei.uim.oop.spring.mvcapp.zadanie3.zmluvy.CestovnePoistenie.purpose).values()}" th:value="${t}" th:text="${t.displayValue}"></option>
+        </select>
+    </div>
+    <input type="submit" value="Submit" style="width: fit-content;"/>
+</form>
+</body>
+</html>

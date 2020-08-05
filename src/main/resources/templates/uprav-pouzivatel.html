@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Uprava pouzivatela</title>
+</head>
+<body>
+<h1>Uprav pouzivatela<span th:text="${pouzivatel.getFullName()}"></span></h1>
+<form action="#" th:action="@{/pouzivatela/pouzivatel/edited}" th:object="${pouzivatel}" method="post">
+    <h2>Pouzivatel info info</h2>
+    <div>
+        <input type="text" id="firstname" th:field="*{firstName}" /></p>
+        <label for="firstname">Meno</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="lastname" th:field="*{lastName}" /></p>
+        <label for="lastname">Priezvisko</label>
+    </div>
+    <br>
+    <div>
+        <input type="number" id="idnumber" th:field="*{idNumber}" /></p>
+        <label for="idnumber">Id cislo</label>
+    </div>
+    <br>
+    <div>
+        <input type="email" id="email" th:field="*{email}" /></p>
+        <label for="email">Email</label>
+    </div>
+    <br>
+    <h2>Adresa trvaleho pobytu</h2>
+    <div>
+        <input type="number" id="psc" th:field="*{permAddress.PSC}" /></p>
+        <label for="psc">PSC</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="city" th:field="*{permAddress.city}" /></p>
+        <label for="city">Mesto</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="township" th:field="*{permAddress.township}" /></p>
+        <label for="township">Okres</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="street" th:field="*{permAddress.street}" /></p>
+        <label for="street">Ulica</label>
+    </div>
+    <br>
+    <div>
+        <input type="number" id="housenum" th:field="*{permAddress.houseNumber}" /></p>
+        <label for="housenum">Cislo domu</label>
+    </div>
+    <br>
+    <h2>UKOrespondencna adresa</h2>
+    <div>
+        <input type="number" id="psc_c" th:field="*{corrAddress.PSC}" /></p>
+        <label for="psc_c">PSC</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="city_c" th:field="*{corrAddress.city}" /></p>
+        <label for="city_c">City</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="township_c" th:field="*{corrAddress.township}" /></p>
+        <label for="township_c">Township</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="street_c" th:field="*{corrAddress.street}" /></p>
+        <label for="street_c">Street</label>
+    </div>
+    <br>
+    <div>
+        <input type="text" id="housenum_C" th:field="*{corrAddress.houseNumber}" /></p>
+        <label for="housenum_c">House number</label>
+    </div>
+    <br>
+    <input type="submit" value="Submit" style="width: fit-content;"/>
+</form>
+</body>
+</html>

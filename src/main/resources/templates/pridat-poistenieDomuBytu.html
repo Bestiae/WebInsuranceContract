@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pridat poistenie</title>
+</head>
+<body>
+<form action="#" th:action="@{'/pouzivatela/pouzivatel/pridat-poistenieDomuBytu/' + ${id}}" th:object="${zmluva}" method="post">
+    <h2>Zmluva info</h2>
+    <div>
+        <label for="signDate">Data registracii</label>
+        <input type="date" id="signDate" th:field="*{signDate.date}" /></p>
+
+    </div>
+    <div>
+        <label for="beginDate">Data zacatku</label>
+        <input type="date" id="beginDate" th:field="*{startDate.date}" /></p>
+
+    </div>
+    <br>
+    <div>
+        <label for="endDate">Data konca</label>
+        <input type="date" id="endDate" th:field="*{endDate.date}" /></p>
+
+    </div>
+    <br>
+    <div>
+        <label for="monthP">Mesiacna platba</label>
+        <input type="number" step="0.01" id="monthP" th:field="*{monthPayment}" /></p>
+
+    </div>
+    <br>
+    <div>
+        <label for="compensation">Konpensacia</label>
+        <input type="number" step="0.01" id="compensation" th:field="*{compensation}" /></p>
+
+    </div>
+    <br>
+    <div>
+        <select th:field="*{propertyType}">
+            <option th:each="t : ${T(sk.stuba.fei.uim.oop.spring.mvcapp.zadanie3.zmluvy.NezivotnePoistenie.type).values()}" th:value="${t}" th:text="${t.displayValue}"></option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="propVal">Hodnota vlastnosti</label>
+        <input type="number" step="0.01" id="propVal" th:field="*{propertyValue}" /></p>
+    </div>
+    <br>
+    <div>
+        <label for="garage">Garage</label>
+        <input type="checkbox" id="garage" th:field="*{garageInsurance}"/>
+    </div>
+
+    <input type="submit" value="Submit" style="width: fit-content;"/>
+</form>
+</body>
+</html>
